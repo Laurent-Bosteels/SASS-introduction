@@ -1,30 +1,13 @@
-// Variables
-$padding: 16px;
-
-// Mixins
-@mixin box-shadow {
-    -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-    box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
-}
-
-// Messaging
-
-%message-shared {
-    border: 1px solid #ccc;
-    padding: 10px;
-    color: #2748B3;
-    background-color: #000;
-    width: 100%
-  }
-
+@import "normalize";
+@import "variables";
+@import "mixins";
 
 body {
     font: 100% "Space Mono", monospace;
-    color: #2748B3;
+    color: $text-primary;
     margin: 0px;
     padding: 0px;
-    background-color: #000;
+    background-color: $black;
     background-image: radial-gradient(#fff, rgba(255, 255, 255, 0.2) 2px, transparent 40px), radial-gradient(#fff, rgba(255, 255, 255, 0.15) 1px, transparent 30px), radial-gradient(#fff, rgba(255, 255, 255, 0.1) 2px, transparent 40px), radial-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1) 2px, transparent 30px);
     background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
     background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
@@ -53,7 +36,7 @@ article {
     }
 
     code {
-        background: #000;
+        background: $black;
         border: 1px solid #ddd;
         color: #666;
         page-break-inside: avoid;
@@ -79,11 +62,10 @@ article {
     }
 }
 
-
 h1,
 h2,
 h6 {
-    color: #6B8EFF
+    color: $text-title
 }
 
 h1 {
@@ -97,22 +79,48 @@ h6 {
     margin-bottom: 0px
 }
 
+// Messaging
+
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: $text-primary;
+  background-color: $black;
+  width: 100%
+}
+
 .message {
     @extend %message-shared;
   }
   
   .success {
     @extend %message-shared;
-    background-color: green;
+    background-color: $green;
   }
   
   .error {
     @extend %message-shared;
-    background-color: red;
+    background-color: $red;
   }
   
   .warning {
     @extend %message-shared;
-    background-color: orange;
+    background-color: $orange;
+  }
+
+
+//link styling
+    a{
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover{
+    color: $hover-color;
+    border-bottom: 1px solid $hover-color;
   }
   
+  &:visited{
+    color: $visited-color;
+    border-color: $visited-color;
+  }
+}
