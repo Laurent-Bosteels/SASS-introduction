@@ -1,3 +1,6 @@
+// Variables
+$padding: 16px;
+
 // Mixins
 @mixin box-shadow {
     -webkit-box-shadow: 10px 10px 19px -4px rgba(255, 255, 255, 0.75);
@@ -27,7 +30,7 @@ article section {
     flex-grow: 1;
     flex-basis: 45%;
     border: 1px silver solid;
-    padding: 16px;
+    padding: $padding;
     margin: 16px;
     clear: both;
     overflow: auto;
@@ -78,7 +81,7 @@ h1 {
 h6 {
     text-align: center;
     font-size: 2em;
-    padding: 32px;
+    padding: ($padding * 2);
     margin-bottom: 0px
 }
 
